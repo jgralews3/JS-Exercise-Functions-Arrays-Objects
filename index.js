@@ -153,7 +153,7 @@ function addNumbers(num1, num2) {
           function appleIndex(array) {
             return array.indexOf('apple');
           }
-          appleIndex(['orange', 'apple', 'grape', 'banana', 'mango']);
+          appleIndex(['orange', 'grape', 'apple', 'grape', 'banana', 'mango']);
 
 /**
  * ### Challenge `isItAnApple`
@@ -327,15 +327,15 @@ function getCarInfoById(idinventory, idnumber) {
 */
 function getOlderCars(maxinventory, maxyear) {
   let oldarray = [];
-  for (i=0;i<maxinventory.length;i++){
+  for (let i=0;i<maxinventory.length;i++){
     if (maxinventory[i].car_year <= maxyear){
-      oldarray.push({Make: maxinventory[i].car_make, Model: maxinventory[i].car_model, Year: maxinventory[i].car_year});
+      oldarray.push({car_make: maxinventory[i].car_make, car_model: maxinventory[i].car_model, car_year: maxinventory[i].car_year});
     }
     else {
     
     }
   }
-  console.log (oldarray);
+  return oldarray;
 }
 
 getOlderCars(inventory3, 1989)
@@ -357,20 +357,20 @@ getOlderCars(inventory3, 1989)
 
 function getGermanCars(makeinventory) {
   let germancar= [];
-  for (i = 0; i < makeinventory.length; i++){
-    if (makeinventory[i].car_make === "Audi") {
+  for (let i = 0; i < makeinventory.length; i++){
+    if (makeinventory[i].car_make === "Audi" || makeinventory[i].car_make === "BMW" || makeinventory[i].car_make === "Mercedez-Benz" || makeinventory[i].car_make === "Volkswagen") {
         germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
-    } else if (makeinventory[i].car_make === "BMW") {
-        germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
-        }
-      else if (makeinventory[i].car_make === "Mercedes-Benz") {
-        germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
-    }
-      else if (makeinventory[i].car_make === "Volkswagen") {
-        germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
+    // } else if (makeinventory[i].car_make === "BMW") {
+    //     germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
+    //     }
+    //   else if (makeinventory[i].car_make === "Mercedes-Benz") {
+    //     germancar.push({Make: makeinventory[i].car_make, Model: makeinventory[i].car_model, Year: makeinventory[i].car_year})
+    // }
+    //   else if (makeinventory[i].car_make === "Volkswagen") {
+    //     germancar.push({make: makeinventory[i].car_make, model: makeinventory[i].car_model, year: makeinventory[i].car_year})
   }
 }
-  console.log (germancar);
+  return germancar;
 }
 
 getGermanCars(inventory3);
